@@ -42,6 +42,10 @@ class HomeFragment : BaseFragment<PresentTenseViewModel,FragmentHomeBinding, Son
                 }
             }
         })
+
+        binding.buttonLogout.setOnClickListener {
+            logout()
+        }
     }
 
 //    private fun updateUI(song: Song) {

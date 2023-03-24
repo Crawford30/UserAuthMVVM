@@ -7,11 +7,12 @@ import androidx.lifecycle.viewModelScope
 import com.example.userloginandlogoutmvvm.data.network.Resource
 import com.example.userloginandlogoutmvvm.data.responses.song.SongResponse
 import com.example.userloginandlogoutmvvm.data.respository.SongRepository
+import com.example.userloginandlogoutmvvm.ui.base.BaseViewModel
 import kotlinx.coroutines.launch
 
 class PresentTenseViewModel(
     private val repository: SongRepository
-):ViewModel() {
+):BaseViewModel(repository) {
     private val _presentTenseSong:MutableLiveData<Resource<SongResponse>> = MutableLiveData()
     val presentTenseSong:LiveData<Resource<SongResponse>>
     get() = _presentTenseSong

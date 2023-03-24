@@ -7,9 +7,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.userloginandlogoutmvvm.data.network.Resource
 import com.example.userloginandlogoutmvvm.data.responses.user.LoginResponse
 import com.example.userloginandlogoutmvvm.data.respository.AuthRepository
+import com.example.userloginandlogoutmvvm.ui.base.BaseViewModel
 import kotlinx.coroutines.launch
 
-class AuthViewModel(private  val repository: AuthRepository): ViewModel() {
+class AuthViewModel(private  val repository: AuthRepository): BaseViewModel(repository) {
     //the view model communicates with the repository
     //By the help of repository we call the function
 

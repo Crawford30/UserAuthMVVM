@@ -3,6 +3,7 @@ package com.example.userloginandlogoutmvvm.data.responses.user
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.clear
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.preferencesKey
 import androidx.datastore.preferences.createDataStore
@@ -15,6 +16,7 @@ class UserPreferences (
     context: Context
         ){
     private val applicationContext = context.applicationContext
+
 
     //we create data store instance
     private val dataStore: DataStore<Preferences>
@@ -33,9 +35,14 @@ class UserPreferences (
 
     suspend fun savedAuthToken(authToken: String){
         dataStore.edit { preferences ->
-
             preferences[KEY_AUTH] = authToken
+        }
+    }
 
+
+    suspend fun clear() {
+        dataStore.edit { preferences ->
+            preferences.clear()
         }
     }
 

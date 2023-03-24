@@ -1,5 +1,6 @@
 package com.example.userloginandlogoutmvvm.data.respository
 
+import com.example.userloginandlogoutmvvm.data.network.AuthApi
 import com.example.userloginandlogoutmvvm.data.network.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -30,6 +31,14 @@ abstract class BaseRepository {
 
         }
 
+
+
     }
+
+    suspend fun logout(api: AuthApi) = safeApiCall {
+        api.logout()
+    }
+
+
 
 }

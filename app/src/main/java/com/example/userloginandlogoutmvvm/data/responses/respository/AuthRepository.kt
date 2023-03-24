@@ -1,6 +1,6 @@
-package com.example.userloginandlogoutmvvm.respository
+package com.example.userloginandlogoutmvvm.data.responses.respository
 
-import com.example.userloginandlogoutmvvm.network.AuthApi
+import com.example.userloginandlogoutmvvm.data.responses.network.AuthApi
 
 class AuthRepository(private val api: AuthApi) : BaseRepository() {
 

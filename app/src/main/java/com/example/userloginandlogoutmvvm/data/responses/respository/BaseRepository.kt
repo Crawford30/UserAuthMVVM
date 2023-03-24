@@ -1,6 +1,6 @@
-package com.example.userloginandlogoutmvvm.respository
+package com.example.userloginandlogoutmvvm.data.responses.respository
 
-import com.example.userloginandlogoutmvvm.network.Resource
+import com.example.userloginandlogoutmvvm.data.responses.network.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException

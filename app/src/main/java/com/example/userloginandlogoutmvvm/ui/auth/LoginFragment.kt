@@ -1,28 +1,32 @@
 package com.example.userloginandlogoutmvvm.ui.auth
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
-import com.example.userloginandlogoutmvvm.R
 import com.example.userloginandlogoutmvvm.databinding.FragmentLoginBinding
-import com.example.userloginandlogoutmvvm.network.AuthApi
-import com.example.userloginandlogoutmvvm.network.Resource
-import com.example.userloginandlogoutmvvm.respository.AuthRepository
+import com.example.userloginandlogoutmvvm.data.responses.network.AuthApi
+import com.example.userloginandlogoutmvvm.data.responses.network.Resource
+import com.example.userloginandlogoutmvvm.data.responses.respository.AuthRepository
 import com.example.userloginandlogoutmvvm.ui.base.BaseFragment
+import kotlinx.coroutines.launch
 
 
 class LoginFragment : BaseFragment<AuthViewModel, FragmentLoginBinding, AuthRepository>() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+
 viewModel.loginResponse.observe(viewLifecycleOwner, Observer {
     when (it) {
         is Resource.Success -> {
+
+            lifecycleScope.launch {
+                userPreferences.savedAuthToken(it.value.token.toString())
+            }
+
             Toast.makeText(requireContext(), it.toString(), Toast.LENGTH_LONG).show()
 //            lifecycleScope.launch {
 ////                        viewModel.saveAccessTokens(

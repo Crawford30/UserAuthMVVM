@@ -2,8 +2,8 @@ package com.example.userloginandlogoutmvvm.ui.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.userloginandlogoutmvvm.respository.AuthRepository
-import com.example.userloginandlogoutmvvm.respository.BaseRepository
+import com.example.userloginandlogoutmvvm.data.responses.respository.AuthRepository
+import com.example.userloginandlogoutmvvm.data.responses.respository.BaseRepository
 import com.example.userloginandlogoutmvvm.ui.auth.AuthViewModel
 import java.lang.IllegalArgumentException
 

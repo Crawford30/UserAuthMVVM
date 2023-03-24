@@ -1,6 +1,5 @@
-package com.example.userloginandlogoutmvvm.network
+package com.example.userloginandlogoutmvvm.data.responses.network
 
-import android.content.Context
 import com.example.userloginandlogoutmvvm.BuildConfig
 import okhttp3.Authenticator
 import okhttp3.OkHttpClient

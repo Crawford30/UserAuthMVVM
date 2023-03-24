@@ -16,7 +16,9 @@ import com.example.userloginandlogoutmvvm.data.responses.song.SongResponse
 import com.example.userloginandlogoutmvvm.data.respository.SongRepository
 import com.example.userloginandlogoutmvvm.databinding.FragmentHomeBinding
 import com.example.userloginandlogoutmvvm.ui.base.BaseFragment
+import com.example.userloginandlogoutmvvm.ui.handleApiError
 import com.example.userloginandlogoutmvvm.ui.presenttensesong.PresentTenseViewModel
+import com.example.userloginandlogoutmvvm.ui.visible
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 
@@ -33,12 +35,20 @@ class HomeFragment : BaseFragment<PresentTenseViewModel,FragmentHomeBinding, Son
         viewModel.presentTenseSong.observe(viewLifecycleOwner, Observer {
             when(it){
                 is Resource.Success -> {
-
+                    binding.progressbar.visible(false)
                     Toast.makeText(context?.applicationContext, "Present Tense Songs: ${it}" , Toast.LENGTH_LONG).show()
 
                     Log.d("HomeFragment", "Present Tense Songs: ${it.value.results}")
                    // updateUI(it.value.results.toString())
                     
+                }
+
+                is Resource.Loading -> {
+                    binding.progressbar.visible(true)
+                }
+
+                is Resource.Failure -> {
+                    handleApiError(it)
                 }
             }
         })

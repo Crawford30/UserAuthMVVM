@@ -10,6 +10,6 @@ interface AuthApi {
     @POST("/api/auth/login")
    suspend fun login(
         @Field("email") email:String,
-        @Field("paordssw") password:String,
+        @Field("password") password:String,
     ): LoginResponse
 }

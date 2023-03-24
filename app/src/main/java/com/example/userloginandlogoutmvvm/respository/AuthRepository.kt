@@ -10,4 +10,8 @@ class AuthRepository(private val api: AuthApi) : BaseRepository() {
     }
 
 
+//    suspend fun saveAccessTokens(accessToken: String, refreshToken: String) {
+//        preferences.saveAccessTokens(accessToken, refreshToken)
+//    }
+
 }

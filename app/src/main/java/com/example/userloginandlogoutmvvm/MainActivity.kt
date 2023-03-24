@@ -4,7 +4,7 @@ package com.example.userloginandlogoutmvvm
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.userloginandlogoutmvvm.auth.AuthActivity
+import com.example.userloginandlogoutmvvm.ui.auth.AuthActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.example.userloginandlogoutmvvm.auth
+package com.example.userloginandlogoutmvvm.ui.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

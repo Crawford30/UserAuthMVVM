@@ -1,4 +1,4 @@
-package com.example.userloginandlogoutmvvm.data.responses.network
+package com.example.userloginandlogoutmvvm.data.network
 
 import com.example.userloginandlogoutmvvm.BuildConfig
 import okhttp3.Authenticator
@@ -14,12 +14,21 @@ class RemoteDataSource {
 
 
     fun <Api> buildApi(
-        api: Class<Api>
+        api: Class<Api>,
+    authToken: String? = null
     ): Api {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            .client(OkHttpClient.Builder().also {
+            .client(OkHttpClient.Builder()
+                .addInterceptor{chain ->
+                    //add header as bearer token to request
+                    chain.proceed(chain.request().newBuilder().also {
+                        it.addHeader("Authorization", "Bearer $authToken")
+                    }.build())
+
+                }
+                .also {
                 client ->
 
                 if (BuildConfig.DEBUG) {

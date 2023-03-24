@@ -1,6 +1,6 @@
-package com.example.userloginandlogoutmvvm.data.responses.respository
+package com.example.userloginandlogoutmvvm.data.respository
 
-import com.example.userloginandlogoutmvvm.data.responses.network.Resource
+import com.example.userloginandlogoutmvvm.data.network.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
@@ -11,7 +11,7 @@ abstract class BaseRepository {
     suspend fun <T> safeApiCall(
         apiCall: suspend () -> T
     ): Resource<T>{
-        //returns  a respurce of type T
+        //returns  a resource of type T
 
         //we  execute the api call
         return withContext(Dispatchers.IO){

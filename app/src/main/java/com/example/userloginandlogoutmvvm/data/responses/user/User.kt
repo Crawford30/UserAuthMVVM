@@ -1,4 +1,4 @@
-package com.example.userloginandlogoutmvvm.data.responses
+package com.example.userloginandlogoutmvvm.data.responses.user
 
 
 import com.google.gson.annotations.SerializedName

@@ -7,13 +7,14 @@ import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
-import com.example.userloginandlogoutmvvm.HomeActivity
+
 import com.example.userloginandlogoutmvvm.databinding.FragmentLoginBinding
-import com.example.userloginandlogoutmvvm.data.responses.network.AuthApi
-import com.example.userloginandlogoutmvvm.data.responses.network.Resource
-import com.example.userloginandlogoutmvvm.data.responses.respository.AuthRepository
+import com.example.userloginandlogoutmvvm.data.network.AuthApi
+import com.example.userloginandlogoutmvvm.data.network.Resource
+import com.example.userloginandlogoutmvvm.data.respository.AuthRepository
 import com.example.userloginandlogoutmvvm.ui.base.BaseFragment
 import com.example.userloginandlogoutmvvm.ui.enable
+import com.example.userloginandlogoutmvvm.ui.home.HomeActivity
 import com.example.userloginandlogoutmvvm.ui.startNewActivity
 import com.example.userloginandlogoutmvvm.ui.visible
 import kotlinx.coroutines.launch

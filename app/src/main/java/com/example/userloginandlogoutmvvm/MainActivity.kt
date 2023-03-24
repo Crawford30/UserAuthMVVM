@@ -1,17 +1,15 @@
 package com.example.userloginandlogoutmvvm
 
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
-
-import com.example.userloginandlogoutmvvm.data.responses.UserPreferences
+import com.example.userloginandlogoutmvvm.data.responses.user.UserPreferences
 import com.example.userloginandlogoutmvvm.ui.auth.AuthActivity
+import com.example.userloginandlogoutmvvm.ui.home.HomeActivity
 import com.example.userloginandlogoutmvvm.ui.startNewActivity
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

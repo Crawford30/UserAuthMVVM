@@ -5,8 +5,7 @@ import android.content.Intent
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.example.userloginandlogoutmvvm.HomeActivity
-import com.example.userloginandlogoutmvvm.data.responses.network.Resource
+import com.example.userloginandlogoutmvvm.data.network.Resource
 import com.example.userloginandlogoutmvvm.ui.auth.LoginFragment
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch

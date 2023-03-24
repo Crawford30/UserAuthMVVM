@@ -14,6 +14,7 @@ import com.example.userloginandlogoutmvvm.data.network.Resource
 import com.example.userloginandlogoutmvvm.data.respository.AuthRepository
 import com.example.userloginandlogoutmvvm.ui.base.BaseFragment
 import com.example.userloginandlogoutmvvm.ui.enable
+import com.example.userloginandlogoutmvvm.ui.handleApiError
 import com.example.userloginandlogoutmvvm.ui.home.HomeActivity
 import com.example.userloginandlogoutmvvm.ui.startNewActivity
 import com.example.userloginandlogoutmvvm.ui.visible
@@ -38,16 +39,10 @@ class LoginFragment : BaseFragment<AuthViewModel, FragmentLoginBinding, AuthRepo
             lifecycleScope.launch {
 
                 viewModel.saveAuthToken(it.value.token.toString())
-//                        viewModel.saveAccessTokens(
-//                            it.value.user.access_token!!,
-//                            it.value.user.refresh_token!!
-//                        )
                 requireActivity().startNewActivity(HomeActivity::class.java)
             }
         }
-        is Resource.Failure -> {
-            Toast.makeText(requireContext(), "Login Failure", Toast.LENGTH_LONG).show()
-        }
+        is Resource.Failure -> handleApiError(it)
     }
 })
 
